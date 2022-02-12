@@ -3,6 +3,7 @@
     "version": "0.0.25",
     "description": "像素脑洞UI-像素脑洞独立开发者论坛VueUI组件库",
     "main": "dist/index.umd.js",
+    "homepage": "https://Pixel-Eric.github.io/pixel-ui",
     "keywords": [
         "ui",
         "pixel-ui",
