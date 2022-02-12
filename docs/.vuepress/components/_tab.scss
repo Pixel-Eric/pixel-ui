@@ -1,0 +1,27 @@
+$indexs-height:15%;
+.pixel-tab{
+    box-sizing: border-box;
+    &-indexs{
+        height:2.4rem;
+        display: flex;
+        &-btn{
+            box-sizing: border-box;
+            margin: 0rem .4rem;
+            padding:.3rem .5rem;
+            display: flex;
+            align-items: center;
+            height:100%;
+            transition:.3s;
+            cursor: pointer;
+            &:hover{
+                background-color: darken($color: #fff, $amount: 10%);
+            }
+        }
+    }
+    &-content{
+        height:100%-$indexs-height;
+    }
+}
+.checked{
+    border-bottom: solid 4px rgb(113,171,104);
+}

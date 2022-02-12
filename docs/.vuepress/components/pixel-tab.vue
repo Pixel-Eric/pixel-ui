@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { defineComponent, reactive,ref,onBeforeMount,watchEffect } from "vue";
+import { defineComponent, reactive,ref } from "vue";
 export default defineComponent({
   name:"pixel-tab",
   props: {
@@ -29,7 +29,7 @@ export default defineComponent({
         {name:"tab1",value:'选项卡1'},
         {name:"tab2",value:'选项卡2'}
     ]} },
-    cur:{type: String},
+    cur:{type: String, default:"tab1"},
     width: { type: Number, default: 300 },
     height: { type: Number, default: 300 },
     icnos: { type: Array }
@@ -37,24 +37,28 @@ export default defineComponent({
   setup(props) {
       let state = reactive({});
       let soltName = ref("");
-      
-      let now = ref(props.cur!=null?props.cur:props.indexs[0].name);
+      let now = ref(props.cur);
+
       function change(tabName){
           now.value = tabName;
-      }
-      watchEffect(()=>{
-          props.indexs.forEach(cur=>{
-            state[cur.name] = now.value == cur.name ? true : false; 
-          })
           Object.keys(state).forEach(key=>{
             if(state[key]) soltName.value = key;
           })
-      })
-      onBeforeMount(()=>{
-        change(now.value);
-      })
+          init();
+      }
+      function init(){
+        props.indexs.forEach(cur=>{
+            state[cur.name] = now.value == cur.name ? true : false; 
+        })
+      }
+      init();
+      change(props.cur);
+
       return {state,soltName,change,now}
   },
 });
 </script>
 
+<style lang="scss">
+@import 'tab';
+</style>

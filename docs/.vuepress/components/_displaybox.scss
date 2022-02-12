@@ -1,0 +1,28 @@
+$both-height:25%;
+$center-height:100%-($both-height*2);
+.pixel-displaybox{
+    text-align: left;
+    display: flex;
+    &-left{
+        width:30%;
+        box-sizing: border-box;
+        padding:.5rem;
+        &>img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &-rigth{
+        width:70%;
+        &-title{
+            height:$both-height;
+            font-weight: bold;
+        }
+        &-content{
+            height:$center-height;
+        }
+        &-footer{
+            height:$both-height;
+        }
+    }
+}

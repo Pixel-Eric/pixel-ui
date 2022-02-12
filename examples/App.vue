@@ -1,24 +1,16 @@
 <template>
 <div id="app">
-    <pixel-tab  >
-        <template v-slot:tab1>
-            <div>
-                这里是选项卡1的内容
-            </div>
-        </template>
-        <template v-slot:tab2>
-            <div>
-                这里是选项卡2的内容
-            </div>
-        </template>
-    </pixel-tab>
+<TabDemoVue />
 </div>
 </template>
 
 <script>
-export default {
+import { defineComponent} from 'vue'
+import TabDemoVue from "./demo/TabDemo.vue";
+export default defineComponent({
   name: "App",
-};
+  components:{TabDemoVue}
+})
 </script>
 
 <style lang='scss'>
