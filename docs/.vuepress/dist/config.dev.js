@@ -7,6 +7,7 @@ module.exports = {
   lang: 'zh-CN',
   title: 'PixelUI',
   description: '一个基于Vue3的UI组件库',
+  base: "/pixel-ui/",
   // 主题和它的配置
   theme: '@vuepress/theme-default',
   themeConfig: {
