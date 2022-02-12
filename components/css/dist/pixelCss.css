@@ -1,0 +1,126 @@
+.pixel-btn {
+  display: inline-block;
+  min-width: 10em;
+  min-width: 2em;
+  padding: 0.5em 1em;
+  border-radius: 0.2em;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+}
+
+.iconfont::before {
+  margin-right: 0.5em;
+}
+
+.radius {
+  border-radius: 1.5em;
+}
+
+.fill-normal {
+  background-color: #219aeb;
+  color: white;
+}
+.fill-normal:hover {
+  background-color: #127ec7;
+}
+
+.border-normal {
+  border: #219aeb solid 2px;
+  background-color: white;
+}
+.border-normal:hover {
+  background-color: #e6e6e6;
+}
+
+.fill-success {
+  background-color: #3dd838;
+  color: white;
+}
+.fill-success:hover {
+  background-color: #29b924;
+}
+
+.border-success {
+  border: #3dd838 solid 2px;
+  background-color: white;
+}
+.border-success:hover {
+  background-color: #e6e6e6;
+}
+
+.fill-warn {
+  background-color: #ebb521;
+  color: white;
+}
+.fill-warn:hover {
+  background-color: #c79712;
+}
+
+.border-warn {
+  border: #ebb521 solid 2px;
+  background-color: white;
+}
+.border-warn:hover {
+  background-color: #e6e6e6;
+}
+
+.fill-danger {
+  background-color: #eb2121;
+  color: white;
+}
+.fill-danger:hover {
+  background-color: #c71212;
+}
+
+.border-danger {
+  border: #eb2121 solid 2px;
+  background-color: white;
+}
+.border-danger:hover {
+  background-color: #e6e6e6;
+}
+
+.pixel-displaybox {
+  text-align: left;
+  display: flex;
+}
+.pixel-displaybox-left {
+  width: 30%;
+  box-sizing: border-box;
+  padding: 0.5rem;
+}
+.pixel-displaybox-left > img {
+  width: 100%;
+  height: 100%;
+}
+.pixel-displaybox-rigth {
+  width: 70%;
+}
+.pixel-displaybox-rigth-title {
+  height: 25%;
+  font-weight: bold;
+}
+.pixel-displaybox-rigth-content {
+  height: 50%;
+}
+.pixel-displaybox-rigth-footer {
+  height: 25%;
+}
+
+.pixel-tab {
+  box-sizing: border-box;
+}
+.pixel-tab-indexs {
+  height: 15%;
+  display: flex;
+}
+.pixel-tab-indexs-btn {
+  padding: 0.3rem 0.8rem;
+  height: 100%;
+  border-bottom: solid 1px #71ab68;
+}
+.pixel-tab-content {
+  height: 85%;
+}

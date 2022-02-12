@@ -1,0 +1,27 @@
+.pixel-tab {
+  box-sizing: border-box;
+}
+.pixel-tab-indexs {
+  height: 2.4rem;
+  display: flex;
+}
+.pixel-tab-indexs-btn {
+  box-sizing: border-box;
+  margin: 0rem 0.4rem;
+  padding: 0.3rem 0.5rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.pixel-tab-indexs-btn:hover {
+  background-color: #e6e6e6;
+}
+.pixel-tab-content {
+  height: 85%;
+}
+
+.checked {
+  border-bottom: solid 4px #71ab68;
+}

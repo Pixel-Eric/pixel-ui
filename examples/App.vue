@@ -1,20 +1,26 @@
 <template>
-  <pixel-demo />
+<div id="app">
+    <pixel-tab  >
+        <template v-slot:tab1>
+            <div>
+                这里是选项卡1的内容
+            </div>
+        </template>
+        <template v-slot:tab2>
+            <div>
+                这里是选项卡2的内容
+            </div>
+        </template>
+    </pixel-tab>
+</div>
 </template>
 
 <script>
 export default {
-  name: 'App'
-}
+  name: "App",
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang='scss'>
+
 </style>
