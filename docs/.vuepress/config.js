@@ -8,7 +8,7 @@ module.exports = {
     // 主题和它的配置
     theme: '@vuepress/theme-default',
     themeConfig: {
-      logo: 'https://new-pixel-1306262005.cos.ap-nanjing.myqcloud.com/banner/Logo.png',
+      logo: './images/logo.png',
       home:"/",
       navbar:[
           {
