@@ -1,8 +1,9 @@
 import Button from './button'
 import DisplayBox from './displaybox'
 import Tab from './tab'
+import Tabel from './table'
 const components = {
-    Button,DisplayBox,Tab
+    Button,DisplayBox,Tab,Tabel
 }
 const install = (app)=>{
     if(app.installed) return;
@@ -15,6 +16,6 @@ const API = {
     install
 }
 export {
-    Button,DisplayBox,Tab
+    Button,DisplayBox,Tab,Tabel
 }
 export default API;
