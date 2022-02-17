@@ -37,7 +37,7 @@
             <col
               v-for="w in Object.keys(header_widths)"
               :name="`pixel-table-1_col_${parseInt(w)+1}`"
-              :width="header_widths[w]"
+              :width="`${getWidth(d)}px`"
               :align="slot_align[w]"
               :key="w"
             >
@@ -60,7 +60,7 @@
           <col
             v-for="w in Object.keys(header_widths)"
             :name="`pixel-table-1_col_${parseInt(w)+1}`"
-            :width="header_widths[w]"
+            :width="`${getWidth(d)}px`"
             :key="w"
           >
         </colgroup>
@@ -132,13 +132,17 @@ export default defineComponent({
     function isColComponent(flag = false) {
       config.enable_slot = flag;
       if (!flag) {
+        console.log('会执行吗？');
         config.header_data = Object.keys(props.data[0]);
       }
     }
     //表格数据渲染
     function dataRender(col) {
       //将列名称依次返回
+      console.log(col.name);
       config.header_data.push(col.name);
+      console.log(config.header_data);
+      
       //将列的宽度依次返回
       config.header_widths.push(col.width);
       config.slot_align.push(col.align);
@@ -148,14 +152,19 @@ export default defineComponent({
     provide("dataRender", dataRender);
     provide("isColComponent", isColComponent);
 
-    //检测一下是否传入列组件
-    nextTick(() => {
-      if (!config.enable_slot) {
-        config.header_data = Object.keys(props.data[0]);
-      }
-    });
+    //该代码与真实版本中不同，因为在VuePress中渲染顺序的问题
+    setTimeout(() => {
+        nextTick(() => {
+          if (!config.enable_slot) {
+                config.header_data = Object.keys(props.data[0]);
+            }
+        });
+    }, 3000);
     // isColComponent();
     return { ...toRefs(config), getWidth };
   },
 });
 </script>
+<style lang='scss'>
+@import 'table';
+</style>

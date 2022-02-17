@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <div id="table-demo">
       <pixel-table
       :data="news"
-      :width="500"
-      :height="200"
+      :width="520"
+      :height="320"
+      :animation="true"
       >
         <pixel-table-col name="title" :width="400" />
         <pixel-table-col name="time" :width="100" color="#999" />
@@ -15,13 +16,6 @@
 import { defineComponent } from "vue"
 export default defineComponent({
     setup(){
-        let d = [
-            {name:'张三',age:20,num:12,salary:1000},
-            {name:'李四',age:30,num:123,salary:1200},
-            {name:'王五',age:22,num:123,salary:2200},
-            {name:'赵六',age:27,num:123,salary:4300},
-            {name:'田七',age:24,num:123,salary:5600}
-        ];
         let news = [
             {title:'【杂谈】浅谈游戏中的道德困境',time:'2022-2-16'},
             {title:'【GDC中字】游戏考古学 - 挖掘并保存电子游戏挖掘并保存电子游戏挖掘并保存电子游戏123',time:'2022-2-16'},
@@ -30,10 +24,13 @@ export default defineComponent({
             {title:'【科普知识】游戏基础知识——毒',time:'2022-2-16'},
             {title:'【科普知识】Blender 新手雕刻入门教程 #4',time:'2022-2-16'},
             {title:'【游戏拓展】体素沙漠地牢（TINY DUNGEON ...',time:'2022-2-16'}
-        ]
-        // console.log(d[1].length);
-        
-        return {d,news};
+        ]  
+        return {news};
     }
 })
 </script>
+<style >
+#table-demo{
+    overflow: hidden;
+}
+</style>

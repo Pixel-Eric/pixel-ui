@@ -33,7 +33,9 @@ module.exports = {
                 children:[
                     {text:"Button",link:"/components/Button"},
                     {text:"DisplayBox",link:"/components/DisplayBox"},
-                    {text:"Tab",link:"/components/Tab"}
+                    {text:"Tab",link:"/components/Tab"},
+                    {text:"Table",link:"/components/Table"},
+                    {text:'Sticker',link:"/components/Sticker"}
                 ]
             }
           ]
@@ -46,7 +48,11 @@ module.exports = {
             components: {
               "pixel-btn": path.resolve(__dirname, './components/pixel-btn.vue'),
               'pixel-displaybox':path.resolve(__dirname, './components/pixel-displaybox.vue'),
-              'pixel-tab': path.resolve(__dirname, './components/pixel-tab.vue')
+              'pixel-tab': path.resolve(__dirname, './components/pixel-tab.vue'),
+              'pixel-table-col':path.resolve(__dirname, './components/pixel-table-col.vue'),
+              'pixel-sticker':path.resolve(__dirname, './components/pixel-sticker.vue'),
+              'pixel-table':path.resolve(__dirname, './components/pixel-table.vue'),
+              'TableDemo':path.resolve(__dirname, './components/TableDemo.vue')
             },
           },
         ],

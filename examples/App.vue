@@ -1,25 +1,16 @@
 <template>
 <div id="app">
     <TableDemoVue />
-    <TabDemoVue />
-    <pixel-tab>
-        <template v-slot:tab1>
-            T1
-        </template>
-        <template v-slot:tab2>
-            T2
-        </template>
-    </pixel-tab>
 </div>
 </template>
 
 <script>
 import { defineComponent} from 'vue'
+
 import TableDemoVue from './demo/TableDemo.vue'
-import TabDemoVue from './demo/TabDemo.vue'
 export default defineComponent({
   name: "App",
-  components:{TableDemoVue,TabDemoVue}
+  components:{TableDemoVue}
 })
 </script>
 

@@ -1,0 +1,17 @@
+$name:pixel-sticker;
+.#{$name}{
+    position: relative;
+    display: inline-block;
+    &-content{
+        position: absolute;
+        min-width:20px;
+        max-width:auto;
+        height:20px;
+        padding:.1rem .5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: .6rem;
+        border-radius: .3rem;
+    }
+}
