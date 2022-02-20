@@ -22,13 +22,12 @@ export default defineComponent({
     props:{
         content:String,
         mode:{type:String,default:'normal'},
-        bgColor:{type:String,default:'red'},
+        bgColor:{type:String,default:'none'},
         color:{type:String,default:'#fff'},
         position:{type:String,default:'right'}
     },
     setup(props){
         let config = position(props.position);
-        
         return {config}
     }
 })

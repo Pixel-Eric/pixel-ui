@@ -5,9 +5,11 @@ $staggeredColor:rgb(245, 245, 245);
 // 表格整体的宽度处理
 .#{$name}{
     box-sizing: border-box;
+    border-spacing: 0;
     // 表头
     &-header-wrapper{
         width: 100%;
+        background-color: white;
         &>div{
             width: 100%;
             &>thead{

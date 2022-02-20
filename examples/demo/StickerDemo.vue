@@ -1,10 +1,11 @@
 <template>
   <pixel-sticker
-    content="1th"
     position="right"
-    bgColor="tomato"
   >
-    <p>这是一个文章的标题内容</p>
+    <p>这是一个贴了自定义组件的标题</p>
+    <template v-slot:customize>
+        <pixel-btn value="移除"></pixel-btn>
+    </template>
   </pixel-sticker>
 </template>
 

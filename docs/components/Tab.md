@@ -2,20 +2,18 @@
 一个普普通通的选项卡
 ## 预览
 
-<div>
-    <pixel-tab  >
-        <template v-slot:tab1>
-            <div>
-                这里是选项卡1的内容
-            </div>
-        </template>
-        <template v-slot:tab2>
-            <div>
-                这里是选项卡2的内容
-            </div>
-        </template>
-    </pixel-tab>
-</div>
+<pixel-tab  >
+    <template v-slot:tab1>
+        <div>
+            这里是选项卡1的内容
+        </div>
+    </template>
+    <template v-slot:tab2>
+        <div>
+            这里是选项卡2的内容
+        </div>
+    </template>
+</pixel-tab>
 
 ## 代码
 ```html

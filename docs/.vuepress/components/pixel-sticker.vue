@@ -16,23 +16,23 @@
 
 <script>
 import { defineComponent } from "vue"
-import position from "../hooks/postion"
+import position from '../hooks/postion';
 export default defineComponent({
     name:'pixel-sticker',
     props:{
         content:String,
         mode:{type:String,default:'normal'},
-        bgColor:{type:String,default:'red'},
+        bgColor:{type:String,default:'none'},
         color:{type:String,default:'#fff'},
         position:{type:String,default:'right'}
     },
     setup(props){
         let config = position(props.position);
-        
         return {config}
     }
 })
 </script>
+
 <style lang='scss'>
 @import 'sticker';
 </style>

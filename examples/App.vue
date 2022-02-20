@@ -1,16 +1,47 @@
 <template>
 <div id="app">
-    <TableDemoVue />
+        <!-- <pixel-navbar :data="navbar" :shadow="true" /> -->
+    <pixel-navbar :shadow="true" :logo="require('./assets/logo.png')">
+        <pixel-navbar-ul title="首页" href="/Home">
+        </pixel-navbar-ul>
+        <pixel-navbar-ul title="指南" href="/Guide">
+            <pixel-navbar-li title="安装" href="/Home" />
+            <pixel-navbar-li title="说明" href="/Home" />
+        </pixel-navbar-ul>
+        <pixel-navbar-ul title="组件" href="/Home">
+        </pixel-navbar-ul>
+    </pixel-navbar>
+    <router-view></router-view>
 </div>
 </template>
 
 <script>
-import { defineComponent} from 'vue'
+import { defineComponent,reactive} from 'vue'
 
-import TableDemoVue from './demo/TableDemo.vue'
 export default defineComponent({
   name: "App",
-  components:{TableDemoVue}
+  setup(){
+      let navbar = reactive([
+          {
+            title: "Home"
+          },
+          {
+              title:'About',
+              children: [
+                  {title:'Test'},
+                  {title:'Test2'}
+              ]
+          },
+          {
+              title:'Other',
+              children: [
+                  {title:'捐赠我们'},
+                  {title:'意见反馈'}
+              ]
+          }
+      ])
+      return {navbar}
+  }
 })
 </script>
 
@@ -21,8 +52,5 @@ export default defineComponent({
     right: 0;
     top: 0;
     bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 </style>

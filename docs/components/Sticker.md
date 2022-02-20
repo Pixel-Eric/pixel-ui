@@ -4,7 +4,7 @@
 
 ## 预览
 
-<pixel-sticker content="Hot">
+<pixel-sticker content="Hot" bgColor="red">
     <span>这是一个很长的文章标题</span>
 </pixel-sticker>
 
@@ -39,6 +39,30 @@
 ### 插槽模式
 
 如果您没有设置对应的值则会使用插槽模式进行渲染。
+
+例如您想再每个文章标题右侧贴上一个按钮组件，则您可以这样编写
+
+```vue
+  <pixel-sticker
+    position="right"
+  >
+    <p>这是一个贴了自定义组件的标题</p>
+    <template v-slot:customize>
+        <pixel-btn value="移除"></pixel-btn>
+    </template>
+  </pixel-sticker>
+```
+
+
+  <pixel-sticker position="right">
+    <p>这是一个贴了自定义组件的标题</p>
+    <template v-slot:customize>
+        <pixel-btn value="移除"></pixel-btn>
+    </template>
+  </pixel-sticker>
+
+
+
 
 #### 如何使用该模式？
 
