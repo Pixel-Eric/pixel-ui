@@ -2,7 +2,7 @@
 ## 详细使用方法
     官网:https://pixel-eric.github.io/pixel-ui/
 ## 版本 Version
-    version 0.0.26
+    version 0.0.27
 ## 安装 Install
     npm i pixel-ui
 ## 简介 Instructor
