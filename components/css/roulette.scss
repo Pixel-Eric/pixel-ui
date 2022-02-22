@@ -1,0 +1,37 @@
+$name:pixel-roulette;
+.#{$name}{
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    height: 200px;
+    &-plate{
+        position: relative;
+        height: 100%;
+        &-arr{
+            position: relative;
+            height: 100%;
+        }
+        & img{
+            position: absolute;
+            left: 0;top: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &-titles{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height:16%;
+        background-color: rgba(0, 0, 0, 0.541);
+        color: #fff;
+        display: flex;
+        box-sizing: border-box;
+        align-items: center;
+        &>p{
+            position: absolute;
+            left: .8rem;
+        }
+    }
+}
