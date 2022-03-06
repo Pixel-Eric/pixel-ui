@@ -4,6 +4,17 @@ $name:pixel-roulette;
     overflow: hidden;
     width: 300px;
     height: 200px;
+    cursor: pointer;
+    &:hover{
+        .#{$name}-direction{
+            display: block;
+        }
+        .#{$name}-titles{
+            height:22%
+        }
+    }
+
+
     &-plate{
         position: relative;
         height: 100%;
@@ -20,6 +31,7 @@ $name:pixel-roulette;
     }
     &-titles{
         position: absolute;
+        transition:.4s;
         left: 0;
         bottom: 0;
         width: 100%;
@@ -29,9 +41,28 @@ $name:pixel-roulette;
         display: flex;
         box-sizing: border-box;
         align-items: center;
-        &>p{
+        z-index: 100;
+        &-block{
             position: absolute;
             left: .8rem;
+            z-index: 100;
+            &>p:nth-child(1){
+                font-size: 1rem;
+                color: #fff;
+                margin: 0;
+            }
+            &>p:nth-child(2){
+                font-size: .4rem;
+                color: #fff;
+                margin: 0;
+            }
         }
+    }
+    &-direction{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 }

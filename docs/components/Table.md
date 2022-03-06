@@ -62,6 +62,7 @@
 | outBorder  | boolean  |    no    |                  |     外边框     |                         是否带外边框                         |
 | lineBorder | boolean  |    no    |                  |     行边框     |                    是否开启每行数据的边框                    |
 | animation  | boolean  |    no    |                  |    动画效果    |                     是否开启指向动画效果                     |
+|   sticke   | boolean  |          |                  |                |                                                              |
 
 ### pixel-table-col参数
 
@@ -72,7 +73,7 @@
 |  align   | string |    no    | 默认left,可选值left、center、right |  文字对其方式  |      |
 |  color   | string |    no    |                                    | 显示文字的颜色 |      |
 
-### 
+
 
 ## 数据渲染模式
 
@@ -121,3 +122,43 @@ PixelTable提供了两种渲染表格的方式，你可以使用表格内置的�
       <pixel-table-col name="salary" value="薪水" />
   </pixel-table>
 
+
+
+## Sticker模式
+
+这一个模式较为特殊，因为有一部分用户可能想要在每一行显示的数据贴上一个标签，我为这种情况专门开发了一个Sticker模式，只要你传入一个名为*stickerOptions* 的属性，那么表格就会以Sticker模式的方式进行工作。
+
+> 请注意，如果您正在使用按需加载，那么您不仅仅要引入Tabel还要引入Sticker，因为Sticker模式需要该组件的支持。
+
+| 属性名称 |  类型  | 是否必须 |    可选值/格式    |                 说明                  | 备注 |
+| :------: | :----: | :------: | :---------------: | :-----------------------------------: | :--: |
+|   mode   | string |    no    |    key\config     |     sticker指定Sticker的工作模式      |      |
+|  config  | array  |    no    | [{content,color}] | 如果mode中使用了config，必须填写该值  |      |
+|   key    | string |    no    |                   | 贴入贴纸的列key，注意与属性名保持一致 |      |
+
+```vue
+  <pixel-table :data="[
+            {name:'张三',age:20,num:12,salary:1000},
+            {name:'李四',age:30,num:123,salary:1200},
+            {name:'王五',age:22,num:123,salary:2200},
+            {name:'赵六',age:27,num:123,salary:4300},
+            {name:'田七',age:24,num:123,salary:5600}
+        	]" 
+          	:head="true" :width="500"
+         	:stickerOptions="{
+              mode:'config',
+              config:[
+                {content:'Hot',color:'tomato'},
+                {content:'new',color:'green'},
+                {content:'Hot',color:'tomato'}
+              ],
+              key:'name'
+          }">
+      <pixel-table-col name="num" value="工号" align="center" />
+      <pixel-table-col name="name" value="姓名" />
+      <pixel-table-col name="age" value="年龄" />
+      <pixel-table-col name="salary" value="薪水" />
+  </pixel-table>
+```
+
+> BUG:超长文本会变形

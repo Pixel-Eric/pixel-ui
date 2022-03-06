@@ -4,6 +4,15 @@
       :data="news"
       :width="500"
       :height="200"
+      :stickerOptions="{
+          mode:'config',
+          config:[
+            {content:'1th',color:'red'},
+            {content:'2th',color:'red'},
+            {content:'3th',color:'green'},
+          ],
+          key:'title'
+      }"
       >
         <pixel-table-col name="title" :width="400" />
         <pixel-table-col name="time" :width="100" color="#999" />

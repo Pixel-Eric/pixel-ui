@@ -27,6 +27,8 @@
 | position | string |    no    | left、right、top、bottom、left-top、left-bottom、right-bottom、right-top、center-top、center-bottom | 贴纸显示的位置 | 根据设置可以让贴纸贴在不同的位置 |
 | bgColor  | string |    no    |                                                              |  贴纸背景颜色  |                                  |
 |  color   | string |    no    |                                                              |  帖子文字颜色  |                                  |
+| fontSize | string |    no    |                          1rem,10px                           |    字体大小    |                                  |
+|  height  | number |    no    |                                                              |    贴纸高度    |                                  |
 
 接下来将为您介绍两种工作模式
 

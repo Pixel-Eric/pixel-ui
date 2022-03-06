@@ -99,6 +99,21 @@
     </pixel-displaybox>
 ```
 
+## 参数
+
+|   属性名称   |  类型  | 是否必须 |    可选值     |        说明        |  备注  |
+| :----------: | :----: | :------: | :-----------: | :----------------: | :----: |
+|    width     | number |    no    |       -       |   展示卡片的宽度   |  暂无  |
+|    height    | number |    no    |       -       |   展示卡片的高度   |  暂无  |
+|     icon     | string |    no    |               |   展示卡片的图片   |  暂无  |
+|    title     | string |    no    |       -       |   展示卡片的标题   |  暂无  |
+|   content    | string |    no    |               |   展示卡片的内容   |  暂无  |
+|    footer    | string |    no    |               |   展示卡片的页脚   |        |
+|  iconWidth   | number |    no    |               | 展示卡片图标的宽度 | 百分百 |
+|  titleStyle  | Object |    no    | Vue Style写法 |   标题样式配置项   |        |
+| contentStyle | Object |    no    | Vue Style写法 |   内容样式配置项   |        |
+| footerStyle  | Object |    no    | Vue Style写法 |   页脚样式配置项   |        |
+
 ### footer
 
 如果是一个string类型的值，会直接显示在底部，如果给定一个插槽会将插入底部。

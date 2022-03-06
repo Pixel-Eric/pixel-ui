@@ -2,7 +2,9 @@ $indexs-height:15%;
 .pixel-tab{
     box-sizing: border-box;
     background-color: white;
+    display: flex;
     &-indexs{
+        width: 100%;
         height:2.4rem;
         display: flex;
         &-btn{
@@ -20,6 +22,7 @@ $indexs-height:15%;
         }
     }
     &-content{
+        width: 100%;
         height:100%-$indexs-height;
     }
 }

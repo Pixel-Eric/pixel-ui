@@ -1,17 +1,20 @@
 <template>
   <div class="pixel-displaybox" :style="{width:width+'px',height:height+'px'}">
-      <div class="pixel-displaybox-left">
+      <div class="pixel-displaybox-left" :style="{width:iconWidth+'%'}">
           <img :src="icon" alt="">
       </div>
       <div class="pixel-displaybox-rigth">
-          <div class="pixel-displaybox-rigth-title">
+          <div 
+          class="pixel-displaybox-rigth-title"
+          :style="{...titleFont}">
               {{title}}
           </div>
-          <div class="pixel-displaybox-rigth-content" :style="{textAlign:contentAlign}">
+          <div class="pixel-displaybox-rigth-content" 
+          :style="{...contentStyle}">
               {{content}}
           </div>
           <div class="pixel-displaybox-rigth-footer">
-              <div v-if="footer" :style="{textAlign:footerAlign}">
+              <div v-if="footer" :style="{...footerStyle}">
                   {{footer}}
               </div>
               <div v-else>
@@ -34,7 +37,11 @@ export default defineComponent({
         content:String,
         contentAlign:String,
         footer:String,
-        footerAlign:String
+        footerAlign:String,
+        iconWidth:{type:Number,default:30},
+        titleStyle:{type:Object},
+        contentStyle:{type:Object},
+        footerStyle:{type:Object}
     }
 })
 </script>

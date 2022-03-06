@@ -65,7 +65,7 @@
           >
         </colgroup>
         <tr
-          v-for="h in data"
+          v-for="h in Object.keys(data)"
           class="pixel-table-data-warpper"
           :class="{'pixel-table-data-line-animation':animation,
           'pixel-table-data-line':lineBorder}"
@@ -73,11 +73,25 @@
         >
           <td
             v-for="d in Object.keys(header_data)"
-            :style="{textAlign:slot_align[d],color:col_colors[d]}"
+            :style="{
+                textAlign:slot_align[d],
+                color:col_colors[d],
+                width:`${getWidth(d)}px`}"
             :key="d"
           >
-            <span :style="{width:`${getWidth(d)}px`}">
-              {{h[header_data[d]]}}
+            <pixel-sticker v-if="stickerResult?.key&&header_data[d] === stickerResult.key && h <stickerResult.config.length "
+            :style="{maxWidth:'85%'}"
+            :bgColor="stickerResult.config[h]?.color || 'red'"
+            :content="stickerResult.config[h]?.content || 'none'">
+              <span class="pixel-table-data-line-content"  >
+                {{data[h][header_data[d]]}}
+              </span>
+            </pixel-sticker>
+            <span
+              v-else
+              class="pixel-table-data-line-content"
+            >
+              {{data[h][header_data[d]]}}
             </span>
           </td>
         </tr>
@@ -96,6 +110,7 @@ import {
   nextTick,
   onBeforeMount,
 } from "vue";
+import stickerAuto from "../../../hooks/stickerAuto";
 export default defineComponent({
   name: "pixel-table",
   props: {
@@ -108,6 +123,7 @@ export default defineComponent({
     lineBorder: { type: Boolean, default: false },
     animation: { type: Boolean, default: false },
     mode: { type: String, default: "normal" },
+    stickerOptions: { Object },
   },
   setup(props) {
     let config = reactive({
@@ -117,9 +133,11 @@ export default defineComponent({
       slot_align: [],
       table_style: { "pixel-table-border": props.outBorder },
       col_colors: [],
+      stickerResult: {},
     });
 
     onBeforeMount(() => {
+      config.stickerResult = stickerAuto(props.stickerOptions);
       config.table_style[`pixel-table-${props.mode}`] = true;
     });
 

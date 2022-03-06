@@ -1,5 +1,9 @@
 <template>
-  <div class="pixel-tab" :style="{width:width+'px',height:height+'px'}">
+  <div class="pixel-tab" 
+  :style="{
+      width:width+'px',
+      height:height+'px',
+      flexDirection:position == 'bottom' ? 'column-reverse' : 'column'}">
     <div class="pixel-tab-indexs">
       <div
         class="pixel-tab-indexs-btn"
@@ -32,7 +36,8 @@ export default defineComponent({
     cur:{type: String},
     width: { type: Number, default: 300 },
     height: { type: Number, default: 300 },
-    icnos: { type: Array }
+    icnos: { type: Array },
+    position:{type: String, default:'top'}
   },
   setup(props) {
       let state = reactive({});

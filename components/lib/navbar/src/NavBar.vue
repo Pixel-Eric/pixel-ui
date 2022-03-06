@@ -32,7 +32,6 @@
 </template>
 
 <script>
-import "animate.css";
 import { defineComponent, reactive, toRefs, provide, nextTick } from "vue";
 import navbar from "../../../hooks/navbar";
 export default defineComponent({
@@ -81,7 +80,7 @@ export default defineComponent({
     }
 
     setInterval(() => {
-      if (document.documentElement.scrollTop > props.height-5) {
+      if (document.documentElement.scrollTop > props.height+10) {
         config.float = true;
         if (!config.zk) {
           config.zk = true;

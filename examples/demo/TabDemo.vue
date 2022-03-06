@@ -1,5 +1,5 @@
 <template>
-  <pixel-tab :indexs="config">
+  <pixel-tab :indexs="config" position="bottom">
       <template v-slot:new>
           最新消息列表
       </template>

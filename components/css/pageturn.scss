@@ -1,0 +1,44 @@
+.page{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.pageturn{
+    display: flex;
+    margin-top: 1em;
+    
+    justify-content: flex-end;
+    p{
+        margin: 0 .5em;
+        padding: .5em 1em;
+        background-color: #2497c5;
+        color: white;
+        cursor: pointer;
+    }
+    &>div{
+        display: flex;
+        align-items: center;
+        span{
+            margin-right: .5em;
+            // background-color: #2497c5;
+            padding: .5em 1em;
+            color:black;
+        }
+        input{
+            text-align: center;
+            height: 2em;
+            width: 2em;
+        }
+    }
+    &>span{
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    .page-disabled{
+        background-color: #999
+    }
+}
+.pageselect{
+    background-color: white !important;
+    color: black !important;
+}

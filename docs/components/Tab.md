@@ -41,6 +41,7 @@
 |  width   |  number  |    no    |             -             |   选项卡的宽度   |                           |
 |  height  |  number  |    no    |             -             |   选项卡的高度   |                           |
 |   icon   | string[] |    no    |             -             | 选项卡对应的图标 |                           |
+| position |  string  |    no    |        top/bottom         |  选项卡索引位置  |                           |
 
 ### 如何添加选项内容
 

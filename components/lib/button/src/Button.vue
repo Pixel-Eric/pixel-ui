@@ -5,7 +5,7 @@
 </template>
 
 <script>
-
+import '../../../assets/iconfont/iconfont.css'
 import {defineComponent} from 'vue'
 export default defineComponent({
     name:'pixel-btn',

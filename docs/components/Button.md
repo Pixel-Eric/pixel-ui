@@ -56,7 +56,7 @@
 | 属性名称 |    类型    | 是否必须 |           可选值           |      说明      |      备注      |
 | :------: | :--------: | :------: | :------------------------: | :------------: | :------------: |
 |  value   |   string   |   yes    |             -              | 按钮的显示名称 |   暂无   |
-|   icon   |   string   |    no    |             -              | 按钮的显示图标 |   暂无   |
+|   icon   |   string   |    no    |             -              | 按钮的显示图标 |   在0.0.33版本已经修复图标问题   |
 |   type   | string |    no    | normal,warn,success,danger |  按钮显示样式  |   暂无   |
 |  radius  |  boolean   |    no    |             -              |  按钮是否圆角  |   暂无   |
 |   mode   | string |    no    |        fill,border         | 按钮的填充模式 |   暂无   |

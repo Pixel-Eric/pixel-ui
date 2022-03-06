@@ -10,7 +10,15 @@
     <p class="home-title-vice">一个基于Vue3的UI组件库</p>
     <pixel-tab :indexs="tab" :width="620" :height="200">
       <template v-slot:publish>
-          <pixel-table :width="600" :data="publish">
+          <pixel-table :stickerOptions="{
+              mode:'config',
+              config:[
+                {content:'Hot',color:'tomato'},
+                {content:'new',color:'green'},
+                {content:'Hot',color:'tomato'}
+              ],
+              key:'title'
+          }" :width="600" :data="publish">
               <pixel-table-col name="title" value="标题" :width="450" />
               <pixel-table-col name="time" value="时间" align="right" color="#999" />
           </pixel-table>
@@ -48,10 +56,8 @@
 </template>
 
 <script>
-import pixelSticker from "../../docs/.vuepress/components/pixel-sticker.vue";
 import { defineComponent } from "vue";
 export default defineComponent({
-  components: { pixelSticker },
   setup() {
     let news = [
       {

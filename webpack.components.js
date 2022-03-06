@@ -1,8 +1,14 @@
 const glob = require('glob');
+//提取公共css
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+//清除未使用的css文件
+const PurifyCssPlugin = require('purifycss-webpack');
+//使用path获取当前运行路径
 const {
-    resolve
+    resolve,
+    join
 } = require('path');
+//打包vue文件
 const {
     VueLoaderPlugin
 } = require('vue-loader');
@@ -10,6 +16,7 @@ let list = {};
 
 process.env.NODE_ENV = 'production';
 
+//将所有的组件文件路径加入到list列表
 async function readComments(dirPath, list) {
     const files = glob.sync(`${dirPath}/**/index.js`);
     files.forEach(cur => {
@@ -20,7 +27,7 @@ async function readComments(dirPath, list) {
 
 readComments('components/lib', list);
 
-
+//webpack配置文件
 module.exports = {
     entry: list,
     mode: 'production',
@@ -63,13 +70,25 @@ module.exports = {
                         ]
                     ]
                 }
+            },
+            {
+                test:/\.(json|ttf|woff|woff2)$/,
+                exclude: /node_modules/,
+                loader:'file-loader',
+                options:{
+                    outputPath:'./assets',
+                    name:'/[name].[ext]'
+                }
             }
         ],
     },
     plugins: [
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
-            filename:'./css/animation.css'
+            filename:'./css/[chunk].css',
+        }),
+        new PurifyCssPlugin ({
+            paths: glob.sync(join(__dirname, '/*.html'))
         })
     ],
     externals: {
@@ -78,5 +97,17 @@ module.exports = {
         babelcore:'@babel/core',
         babelenv:'@babel/preset-env',
         cssloader:'css-loader',
-    }
+    },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    name: "commons",
+                    chunks: "initial",
+                    minChunks:2,
+                    minSize:0
+                }
+            }
+        }
+    },
 }

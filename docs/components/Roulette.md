@@ -8,19 +8,46 @@
 
 ## 参数
 
-| 属性名称 |   类型   | 是否必须 |      可选值/格式       |      说明      |                备注                 |
-| :------: | :------: | :------: | :--------------------: | :------------: | :---------------------------------: |
-|  width   |  number  |    no    |                        |   轮盘的宽度   |                                     |
-|  height  |  number  |    no    |           -            |   轮盘的高度   |                                     |
-|  render  |  string  |    no    |        arr\slot        | 轮盘的渲染模式 |                                     |
-|   data   | string[] |    no    | [{imgUrl:'',title:''}] |   轮盘的数据   | 仅在使用arr渲染模式的情况下会被读取 |
+|   属性名称    |   类型   | 是否必须 |             可选值/格式              |      说明      |                备注                 |
+| :-----------: | :------: | :------: | :----------------------------------: | :------------: | :---------------------------------: |
+|     width     |  number  |    no    |                                      |   轮盘的宽度   |                                     |
+|    height     |  number  |    no    |                  -                   |   轮盘的高度   |                                     |
+|    render     |  string  |    no    |               arr\slot               | 轮盘的渲染模式 |                                     |
+|     data      | string[] |    no    | [{imgUrl:'',title:'','subtitle':''}] |   轮盘的数据   | 仅在使用arr渲染模式的情况下会被读取 |
+|  titleStyle   |  object  |    no    |              Vue Style               |    标题样式    |                                     |
+| subtitleStyle |  object  |    no    |              Vue Style               |   副标题样式   |                                     |
 
-## 数组模式
+## 指定组件
 
-轮盘组件也支持两种截然不同的渲染模式，如果想要简简单单的创建一个轮盘，仅仅使用数组模式即可创建完成。
+所谓的指定组件也称为指针组件，即指针指上去的一瞬间显示的内容，可以是各种数据，也可以是其他的内容，总之你可以在指定组件中显示更多的组件。
 
-但是如果想要客制化轮盘，则可以使用数组模式。
+#### 使用方法
 
-## 插槽模式
+```vue
+      <pixel-roulette :data="d" :width="800" :height="480" :speed="2000">
+          <template v-slot:direction>
+              <div class="demo-direction">
+                  123123
+              </div>
+          </template>
+      </pixel-roulette>
+```
 
-待更新
+> 将组件插入到预留的direction组件中即可
+
+#### 获取当前轮盘详细数据
+
+你肯定有点疑惑，我该如何获取显示的数据?
+
+例如您的数据已经包含在了轮盘的data当中，那么您可以使用作用域插槽进行接收值，我们会将data传递您。
+
+```vue
+      <pixel-roulette :data="d" :width="800" :height="480" :speed="2000">
+          <template v-slot:direction="scope">
+              <div class="demo-direction">
+                  {{scope.data}}
+              </div>
+          </template>
+      </pixel-roulette>
+```
+
