@@ -1,6 +1,7 @@
 const glob = require('glob');
 //提取公共css
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 //清除未使用的css文件
 const PurifyCssPlugin = require('purifycss-webpack');
 //使用path获取当前运行路径
@@ -49,7 +50,12 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    {
+                        loader:MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath:'../../'
+                        }
+                    },
                     'css-loader'
                 ]
             },
@@ -85,10 +91,7 @@ module.exports = {
     plugins: [
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
-            filename:'./css/[chunk].css',
-        }),
-        new PurifyCssPlugin ({
-            paths: glob.sync(join(__dirname, '/*.html'))
+            filename:'./css/commons/animation.css'
         })
     ],
     externals: {
@@ -97,17 +100,5 @@ module.exports = {
         babelcore:'@babel/core',
         babelenv:'@babel/preset-env',
         cssloader:'css-loader',
-    },
-    optimization: {
-        splitChunks: {
-            cacheGroups: {
-                commons: {
-                    name: "commons",
-                    chunks: "initial",
-                    minChunks:2,
-                    minSize:0
-                }
-            }
-        }
-    },
+    }
 }

@@ -15,10 +15,15 @@ let guide = {
     name:'Guide',
     component:()=>import('../demo/Guide.vue')
 }
+let components = {
+    path:'/Components',
+    name:'Components',
+    component:()=>import('../demo/Component.vue')
+}
 const router = createRouter({
     history:createWebHistory(process.env.BASE_URL),
     routes:[
-        index,home,guide
+        index,home,guide,components
     ]
 })
 export default router;

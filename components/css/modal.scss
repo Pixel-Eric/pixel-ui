@@ -1,0 +1,34 @@
+$name:pix-modal;
+.#{$name}{
+    z-index: 200;
+    &-radius{
+        border-radius: 15px;
+    }
+    &-bg{
+        position:fixed;
+        display: flex;
+        top: 0;left: 0;right: 0;bottom: 0;
+        justify-content: center;
+        align-items: center;
+        overflow:hidden;
+    }
+    &-title{
+        width: 100%;
+        &-p{
+            font-weight: bold;
+            padding: 0;
+            margin: 0;
+        }
+    }
+    &-content{
+        width: 100%;
+        &>p{
+            margin: 0;
+            padding: 0;
+            height: auto;
+        }
+    }
+    &-footer{
+        width: 100%;
+    }
+}

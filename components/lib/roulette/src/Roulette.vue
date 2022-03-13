@@ -36,7 +36,6 @@
 <script>
 import { defineComponent,reactive,toRefs,onBeforeMount,onUnmounted } from "vue"
 import renderCheack from '../../../hooks/renderCheack'
-import "animate.css";
 import Scroll from '../../../hooks/Scroll'
 export default defineComponent({
     name:'pixel-roulette',

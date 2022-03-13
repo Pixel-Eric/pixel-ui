@@ -8,7 +8,7 @@
             <pixel-navbar-li title="安装" href="/Home" />
             <pixel-navbar-li title="说明" href="/Home" />
         </pixel-navbar-ul>
-        <pixel-navbar-ul title="组件" href="/Home">
+        <pixel-navbar-ul title="组件" href="/Components">
         </pixel-navbar-ul>
     </pixel-navbar>
     <router-view></router-view>

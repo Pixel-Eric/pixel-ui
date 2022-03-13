@@ -6,13 +6,14 @@ import Sticker from './sticker'
 import NavBar from './navbar'
 import Roulette from './roulette'
 import PageTurn from './pageturn'
-
-//引入图标库
-import '../assets/iconfont/iconfont.js'
+import Modal from './modal'
+import 'animate.css'
 import '../assets/iconfont/iconfont.css'
 
+
 const components = {
-    Button,DisplayBox,Tab,Tabel,Sticker,NavBar,Roulette,PageTurn
+    Button,DisplayBox,Tab,Tabel,Sticker,NavBar,Roulette,PageTurn,
+    Modal
 }
 const install = (app)=>{
     if(app.installed) return;
@@ -25,6 +26,7 @@ const API = {
     install
 }
 export {
-    Button,DisplayBox,Tab,Tabel,Sticker,NavBar,Roulette,PageTurn
+    Button,DisplayBox,Tab,Tabel,Sticker,NavBar,Roulette,PageTurn,
+    Modal
 }
 export default API;

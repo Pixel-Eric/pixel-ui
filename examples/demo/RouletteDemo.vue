@@ -22,9 +22,9 @@ import { defineComponent } from "vue"
 export default defineComponent({
     setup(){
         let d = [
-            {imgUrl:require('../assets/head-5928mm-Moral_Choices.jpg'),title:'测试标题1',subtitle:'这个标题1的副标题',hot:'120',badge:'扮演,解密'},
-            {imgUrl:require('../assets/head-6371eu-The_Forgotten_City.jpg'),title:'测试标题2',subtitle:'这个标题2的副标题',hot:'292',badge:'奇幻,动作'},
-            {imgUrl:require('../assets/l-3012688-YtKdaf.jpg'),title:'测试标题3',subtitle:'这个标题2的副标题',hot:'300',badge:'魔法,RPG'}
+            {imgUrl:require('../assets/head-5928mm-Moral_Choices.jpg'),title:'测试标题1',subtitle:'这个标题1的副标题',hot:'爆火人气',badge:'扮演,解密'},
+            {imgUrl:require('../assets/head-6371eu-The_Forgotten_City.jpg'),title:'测试标题2',subtitle:'这个标题2的副标题',hot:'爆火人气',badge:'奇幻,动作'},
+            {imgUrl:require('../assets/l-3012688-YtKdaf.jpg'),title:'测试标题3',subtitle:'这个标题2的副标题',hot:'爆火人气',badge:'魔法,RPG'}
         ]
         return {d}
     }
