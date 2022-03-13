@@ -1,5 +1,5 @@
 <template>
-    <li class="pixel-navbar-ul-li">
+    <li class="pixel-navbar-left-ul-li">
         {{data?.title?data.title:title}}
     </li>
 </template>

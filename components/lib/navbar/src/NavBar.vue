@@ -1,31 +1,39 @@
 <template>
-  <transition enter-active-class="animate__animated animate__fadeInDown"
-  leave-active-class="animate__animated animate__fadeOutUp">
+  <transition
+    enter-active-class="animate__animated animate__fadeInDown"
+    leave-active-class="animate__animated animate__fadeOutUp"
+  >
     <div
       v-if="test"
       class="pixel-navbar"
       :class="{'pixel-navbar-shadow':shadow,'pixel-navbar-float':float}"
       :style="{height:height+'px',backgroundColor:bgColor}"
     >
-      <img
-        class="pixel-navbar-logo"
-        :src="logo"
-        alt="logo"
-      >
-      <!-- 导航插槽区域 -->
-      <slot
-        v-if="isSlot"
-        class="pixe-nvabar-slot"
-      ></slot>
-      <div
-        v-else
-        class="pixel-navbar-defult"
-      >
-        <pixel-navbar-ul
-          v-for="ul in ul_data"
-          :key="ul"
-          :data="ul"
-        />
+      <div class="pixel-navbar-left">
+        <img
+          class="pixel-navbar-left-logo"
+          :src="logo"
+          alt="logo"
+        >
+        <!-- 导航插槽区域 -->
+        <slot
+          v-if="isSlot"
+          class="pixe-nvabar-left-slot"
+        >
+        </slot>
+        <div
+          v-else
+          class="pixel-navbar-left-defult"
+        >
+          <pixel-navbar-ul
+            v-for="ul in ul_data"
+            :key="ul"
+            :data="ul"
+          />
+        </div>
+      </div>
+      <div class="pixel-navbar-right">
+          <slot name="rigth"></slot>
       </div>
     </div>
   </transition>
@@ -42,7 +50,7 @@ export default defineComponent({
     shadow: { type: Boolean, default: false },
     bgColor: { type: String, default: "#fff" },
     mode: { type: String, default: "fixed" },
-    data: { type: Array },
+    data: { type: Array }
   },
   setup(props) {
     let config = reactive({
@@ -80,7 +88,7 @@ export default defineComponent({
     }
 
     setInterval(() => {
-      if (document.documentElement.scrollTop > props.height+10) {
+      if (document.documentElement.scrollTop > props.height + 20) {
         config.float = true;
         if (!config.zk) {
           config.zk = true;

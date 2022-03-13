@@ -1,14 +1,14 @@
 <template>
-  <div class="pixel-navbar-ul">
+  <div class="pixel-navbar-left-ul">
     <router-link :to="data?.href?data.href:href">
       <p
-        class="pixel-navbar-ul-title"
+        class="pixel-navbar-left-ul-title"
         :style="{height:getConfig.height+'px'}"
-        :class="{'pixel-navbar-ul-list':isList}"
+        :class="{'pixel-navbar-left-ul-list':isList}"
       >{{data?.title?data.title:title}}</p>
     </router-link>
     <ul
-      class="pixel-navbar-ul-menu"
+      class="pixel-navbar-left-ul-menu"
       :style="{backgroundColor:bgColor}"
     >
       <template v-if="data?.children">

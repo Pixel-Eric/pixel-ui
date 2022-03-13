@@ -1,7 +1,9 @@
 <template>
 <div id="app">
         <!-- <pixel-navbar :data="navbar" :shadow="true" /> -->
-    <pixel-navbar :shadow="true" :logo="require('./assets/logo.png')">
+    <pixel-navbar :shadow="true" 
+                  :logo="require('./assets/logo.png')"
+        >
         <pixel-navbar-ul title="首页" href="/Home">
         </pixel-navbar-ul>
         <pixel-navbar-ul title="指南" href="/Guide">
@@ -10,6 +12,9 @@
         </pixel-navbar-ul>
         <pixel-navbar-ul title="组件" href="/Components">
         </pixel-navbar-ul>
+        <template v-slot:rigth>
+          <RigthLoginVue />
+        </template>
     </pixel-navbar>
     <router-view></router-view>
 </div>
@@ -17,9 +22,13 @@
 
 <script>
 import { defineComponent,reactive} from 'vue'
+import RigthLoginVue from './demo/RigthLogin..vue'
 
 export default defineComponent({
   name: "App",
+  components:{
+    RigthLoginVue
+  },
   setup(){
       let navbar = reactive([
           {
