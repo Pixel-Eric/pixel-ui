@@ -1,0 +1,1 @@
+const e={key:"v-21242705",path:"/components/Roulette.html",title:"Roulette \u8F6E\u76D8",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u53C2\u6570",slug:"\u53C2\u6570",children:[]},{level:2,title:"\u6307\u5B9A\u7EC4\u4EF6",slug:"\u6307\u5B9A\u7EC4\u4EF6",children:[]}],git:{},filePathRelative:"components/Roulette.md"};export{e as data};
