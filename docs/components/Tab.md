@@ -33,15 +33,18 @@
 </div>
 ```
 
-## 属性说明
+## options配置项
 
-| 属性名称 |   类型   | 是否必须 |        可选值/格式        |       说明       |           备注            |
-| :------: | :------: | :------: | :-----------------------: | :--------------: | :-----------------------: |
-|  indexs  | string[] |   yes    | {name:test,value:选项卡1} |   选项卡的索引   | 这里可以设置选项卡,例如{} |
-|  width   |  number  |    no    |             -             |   选项卡的宽度   |                           |
-|  height  |  number  |    no    |             -             |   选项卡的高度   |                           |
-|   icon   | string[] |    no    |             -             | 选项卡对应的图标 |                           |
-| position |  string  |    no    |        top/bottom         |  选项卡索引位置  |                           |
+|   属性名称   |   类型   | 是否必须 |            可选值/格式            |         说明         |           备注            |
+| :----------: | :------: | :------: | :-------------------------------: | :------------------: | :-----------------------: |
+|    indexs    | string[] |   yes    | {name:test,value:选项卡1,icon:‘’} |     选项卡的索引     | 这里可以设置选项卡,例如{} |
+|    width     |  number  |    no    |                 -                 |     选项卡的宽度     |                           |
+|    height    |  number  |    no    |                 -                 |     选项卡的高度     |                           |
+|  lineColor   |  color   |    no    |                                   | 选项卡选中下划线颜色 |                           |
+|  textColor   |  color   |    no    |                                   |    选项卡文字颜色    |                           |
+|   tabAlign   |  string  |    no    |     left(默认),right,uniform      |    选项卡布局方式    |                           |
+| hiddenHeader | boolean  |    no    |         true,false(默认)          |  是否隐藏选项卡头部  |                           |
+|   position   |  string  |    no    |            top/bottom             |    选项卡索引位置    |                           |
 
 ### 如何添加选项内容
 

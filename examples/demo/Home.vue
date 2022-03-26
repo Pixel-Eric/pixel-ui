@@ -8,9 +8,15 @@
       <p class="home-title">PixelUI</p>
     </pixel-sticker>
     <p class="home-title-vice">一个基于Vue3的UI组件库</p>
-    <pixel-tab :indexs="tab" :width="620" :height="200">
+    <pix-tab :options="{
+          indexs:tab,
+          width:620,
+          height:300,
+          cur:'version'
+      }">
       <template v-slot:publish>
-          <pixel-table :stickerOptions="{
+        <pixel-table
+          :stickerOptions="{
               mode:'config',
               config:[
                 {content:'Hot',color:'tomato'},
@@ -18,10 +24,22 @@
                 {content:'Hot',color:'tomato'}
               ],
               key:'title'
-          }" :width="600" :data="publish">
-              <pixel-table-col name="title" value="标题" :width="450" />
-              <pixel-table-col name="time" value="时间" align="right" color="#999" />
-          </pixel-table>
+          }"
+          :width="600"
+          :data="publish"
+        >
+          <pixel-table-col
+            name="title"
+            value="标题"
+            :width="450"
+          />
+          <pixel-table-col
+            name="time"
+            value="时间"
+            align="right"
+            color="#999"
+          />
+        </pixel-table>
       </template>
       <template v-slot:version>
         <pixel-table
@@ -50,7 +68,7 @@
           />
         </pixel-table>
       </template>
-    </pixel-tab>
+    </pix-tab>
 
   </div>
 </template>
@@ -78,18 +96,18 @@ export default defineComponent({
       { version: "0.0.1", content: "PixelUI正式开始开发", time: "2022-1-20" },
     ];
     let publish = [
-        {'title':'测试了NavBar组件',time:'2022-2-16'},
-        {'title':'测试了DisplayBox组件',time:'2022-2-14'},
-        {'title':'测试了Table组件',time:'2022-2-13'},
-        {'title':'测试了Stiker组件',time:'2022-2-10'},
-        {'title':'测试了Tab组件',time:'2022-2-7'},
-        {'title':'测试了Button组件',time:'2022-2-3'}
-    ]
+      { title: "测试了NavBar组件", time: "2022-2-16" },
+      { title: "测试了DisplayBox组件", time: "2022-2-14" },
+      { title: "测试了Table组件", time: "2022-2-13" },
+      { title: "测试了Stiker组件", time: "2022-2-10" },
+      { title: "测试了Tab组件", time: "2022-2-7" },
+      { title: "测试了Button组件", time: "2022-2-3" },
+    ];
     let tab = [
-        {name:'publish',value:'公告'},
-        {name:'version',value:'版本一览'}
-        ]
-    return { news,tab,publish };
+      { name: "publish", value: "公告",icon:'icon-huiyuanguanli' },
+      { name: "version", value: "版本一览" },
+    ];
+    return { news, tab, publish };
   },
 });
 </script>

@@ -13,7 +13,7 @@
         <pixel-navbar-ul title="组件" href="/Components">
         </pixel-navbar-ul>
         <template v-slot:rigth>
-          <RigthLoginVue />
+          <pixel-navbar-ul href="" title="123" />
         </template>
     </pixel-navbar>
     <router-view></router-view>
@@ -22,13 +22,10 @@
 
 <script>
 import { defineComponent,reactive} from 'vue'
-import RigthLoginVue from './demo/RigthLogin..vue'
+
 
 export default defineComponent({
   name: "App",
-  components:{
-    RigthLoginVue
-  },
   setup(){
       let navbar = reactive([
           {

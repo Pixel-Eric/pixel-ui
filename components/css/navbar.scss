@@ -25,67 +25,9 @@ $name:pixel-navbar;
             display: flex;
         }
 
-        a {
-            text-decoration: none;
-            color: #000;
-        }
 
-        &-ul {
-            height: 100%;
-            position: relative;
-            padding: 0 1rem;
-            transition: .3s;
-            cursor: pointer;
 
-            &:hover {
-                background-color: darken(white, 10%);
-
-                .pixel-navbar-left-ul-menu {
-                    display: block;
-                }
-            }
-
-            &-list {
-                &::after {
-                    content: "▼";
-                    font-size: .6rem;
-                    color: #999;
-                    margin-left: .5rem;
-                }
-            }
-
-            &-title {
-                margin: 0;
-                padding: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            &-menu {
-                position: absolute;
-                list-style: none;
-                top: 100%;
-                left: 0;
-                padding: 0;
-                margin: 0;
-                z-index: 10;
-                width: 100%;
-                display: none;
-            }
-
-            &-li {
-                width: 100%;
-                padding: 5px 0px;
-                text-align: center;
-                cursor: pointer;
-
-                &:hover {
-                    background-color: darken(white, 10%);
-                }
-            }
-
-        }
+        
     }
 
 }
@@ -98,4 +40,65 @@ $name:pixel-navbar;
     position: fixed;
     top: 0;
     left: 0;
+}
+
+.pixel-navbar-left-ul {
+    height: 100%;
+    position: relative;
+    padding: 0 1rem;
+    transition: .3s;
+    cursor: pointer;
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    &:hover {
+        background-color: darken(white, 10%);
+
+        .pixel-navbar-left-ul-menu {
+            display: block;
+        }
+    }
+
+    &-list {
+        &::after {
+            content: "▼";
+            font-size: .6rem;
+            color: #999;
+            margin-left: .5rem;
+        }
+    }
+
+    &-title {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-menu {
+        position: absolute;
+        list-style: none;
+        top: 100%;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        z-index: 10;
+        width: 100%;
+        display: none;
+    }
+
+    &-li {
+        width: 100%;
+        padding: 5px 0px;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken(white, 10%);
+        }
+    }
+
 }

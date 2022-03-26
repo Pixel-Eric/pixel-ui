@@ -8,7 +8,7 @@
       <div
         class="pix-modal-bg"
         v-if="display"
-        @click="close()"
+        @click.self="close()"
         :style="{
 						backgroundColor:background.bgColor
 					}"

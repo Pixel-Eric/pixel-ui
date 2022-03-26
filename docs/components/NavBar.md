@@ -24,6 +24,7 @@ import 'pixel-ui/dist/css/animation.css'
 | bgColor  | string  |    no    |              |   导航栏的背景颜色   |      |
 |   mode   | string  |    no    | fixed、float |   导航栏的工作模式   |      |
 |   data   |  array  |    no    |              |   导航栏渲染的数据   |      |
+|  rigth   |  slot   |    no    |              |    导航栏右侧内容    |      |
 
 ### pixel-navbar-ul 参数
 

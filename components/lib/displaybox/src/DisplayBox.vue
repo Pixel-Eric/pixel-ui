@@ -6,7 +6,7 @@
       <div class="pixel-displaybox-rigth">
           <div 
           class="pixel-displaybox-rigth-title"
-          :style="{...titleFont}">
+          :style="{...titleStyle}">
               {{title}}
           </div>
           <div class="pixel-displaybox-rigth-content" 
