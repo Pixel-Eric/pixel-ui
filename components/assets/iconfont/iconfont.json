@@ -6,6 +6,69 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "21784249",
+      "name": "Information Delivery",
+      "font_class": "7xinxifabu",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "21786362",
+      "name": "time",
+      "font_class": "11shijian",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "21786547",
+      "name": "location",
+      "font_class": "didian",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "21787743",
+      "name": "calendar",
+      "font_class": "13rili",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "21789057",
+      "name": "triangle",
+      "font_class": "14xialasanjiao",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "21789138",
+      "name": "arrow",
+      "font_class": "14xialasanjiao1",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "21789380",
+      "name": "access card",
+      "font_class": "15menjinka",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "21789544",
+      "name": "search",
+      "font_class": "16sousuo",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "21789687",
+      "name": "system management",
+      "font_class": "17xitongguanli",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
       "icon_id": "577315",
       "name": "减号",
       "font_class": "jianhao",

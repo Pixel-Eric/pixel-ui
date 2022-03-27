@@ -1,6 +1,9 @@
 $name:pix-modal;
 .#{$name}{
     z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &-radius{
         border-radius: 15px;
     }
@@ -12,6 +15,7 @@ $name:pix-modal;
         justify-content: center;
         align-items: center;
         overflow:hidden;
+        transition: 0.5s;
     }
     &-title{
         width: 100%;
@@ -23,6 +27,7 @@ $name:pix-modal;
     }
     &-content{
         width: 100%;
+        text-align: center;
         &>p{
             margin: 0;
             padding: 0;
@@ -32,4 +37,7 @@ $name:pix-modal;
     &-footer{
         width: 100%;
     }
+}
+.close{
+    opacity: 0;
 }

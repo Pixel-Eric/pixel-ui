@@ -8,21 +8,26 @@
 
 ### 基础配置
 
-| 属性名称 |   类型   | 是否必须 |         可选值         |       说明       |    备注     |
-| :------: | :------: | :------: | :--------------------: | :--------------: | :---------: |
-|  width   |  number  |    no    |           -            |   模态框的宽度   |    暂无     |
-|  height  |  number  |    no    |           -            |   模态框的高度   |    暂无     |
-|  radius  | boolean  |    no    |                        |  模态框是否圆角  |             |
-|  close   | callback |   yes    |                        | 模态框的关闭回调 |             |
-| display  | boolean  |   yes    | 一个拥有响应式的布尔值 | 模态框的显示状态 | open，close |
+|       属性名称        |   类型   | 是否必须 |                            可选值                            |           说明           |           备注            |
+| :-------------------: | :------: | :------: | :----------------------------------------------------------: | :----------------------: | :-----------------------: |
+|         width         |  number  |    no    |                              -                               |       模态框的宽度       |           暂无            |
+|        height         |  number  |    no    |                              -                               |       模态框的高度       |           暂无            |
+|        radius         | boolean  |    no    |                                                              |      模态框是否圆角      |                           |
+|         close         | callback |   yes    |                                                              |     模态框的关闭回调     |                           |
+|        display        | boolean  |   yes    |                    一个拥有响应式的布尔值                    |     模态框的显示状态     |        open，close        |
+| top/left/right/bottom |  number  |    no    |                                                              | 模态框距离各个方位的距离 |                           |
+|       position        |  string  |    no    | center/top/left/right/bottom/top-left/top-right/bottom-left/bottom/right |     模态框出现的位置     |                           |
+|     contentStyle      | VueStyle |    no    |                                                              |     模态框内容的样式     | 只有content为string时有效 |
+|         icon          |  string  |    no    |                                                              |        模态框图标        | 只有content为string时有效 |
 
 ### 背景配置 background
 
-| 属性名称  |  类型   | 是否必须 | 可选值 |        说明        | 备注 |
-| :-------: | :-----: | :------: | :----: | :----------------: | :--: |
-|  bgColor  |  color  |    no    |        |   模态框背景颜色   |      |
-| bgOpacity | number  |    no    |  1-0   |  模态框背景透明度  |      |
-|   show    | boolean |    no    |        | 模态框背景是否显示 |      |
+|  属性名称  |  类型   | 是否必须 | 可选值 |             说明             | 备注 |
+| :--------: | :-----: | :------: | :----: | :--------------------------: | :--: |
+|  bgColor   |  color  |    no    |        |        模态框背景颜色        |      |
+| bgOpacity  | number  |    no    |  1-0   |       模态框背景透明度       |      |
+|    show    | boolean |    no    |        |      模态框背景是否显示      |      |
+| clickClose | boolean |    no    |        | 模态框背景点击是否关闭模态框 |      |
 
 ### 动画配置 animation
 
