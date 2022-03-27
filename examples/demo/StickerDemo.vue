@@ -4,7 +4,9 @@
   >
     <p>这是一个贴了自定义组件的标题</p>
     <template v-slot:customize>
-        <pixel-btn value="移除"></pixel-btn>
+        <pix-btn :options="{
+            value:'移除'
+        }"></pix-btn>
     </template>
   </pixel-sticker>
 </template>

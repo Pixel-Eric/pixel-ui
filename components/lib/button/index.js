@@ -2,7 +2,7 @@ import btn from './src/Button.vue'
 
 const Button = {
     install(app){
-        app.component('pixel-btn',btn);
+        app.component('pix-btn',btn);
     }
 }
 export default Button;

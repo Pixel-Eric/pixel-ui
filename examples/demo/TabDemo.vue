@@ -17,25 +17,30 @@
       公告列表
     </template>
   </pix-tab>
-  <pixel-btn @click="test()" value="切换到热门" />
+  <pix-btn
+    @click="test()"
+    :options="{
+      value:'切换到热门'
+  }"
+  />
 </template>
 
 <script>
-import { defineComponent ,reactive , toRefs } from "vue";
+import { defineComponent, reactive, toRefs } from "vue";
 export default defineComponent({
   setup() {
     let state = reactive({
-        cur:'new'
-    })
+      cur: "new",
+    });
     let config = [
       { name: "new", value: "最新" },
       { name: "hot", value: "热门" },
       { name: "publish", value: "公告" },
     ];
-    function test(){
-        state.cur = 'hot';
+    function test() {
+      state.cur = "hot";
     }
-    return { config,...toRefs(state) ,test};
+    return { config, ...toRefs(state), test };
   },
 });
 </script>

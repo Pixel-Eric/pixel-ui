@@ -1,8 +1,10 @@
 <template>
   <div>
-    <pixel-btn
+    <pix-btn
       v-on:click="open"
-      value="显示弹窗"
+      :options="{
+          value:'显示弹窗'
+      }"
     />
     <pix-modal
       :width="600"

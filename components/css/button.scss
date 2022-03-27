@@ -1,43 +1,113 @@
 $btn-list:normal success warn danger;
-$btn-style:(
-    normal:rgb(33, 154, 235),
-    success:rgb(61, 216, 56),
-    warn:rgb(235, 181, 33),
-    danger:rgb(235, 33, 33)
-);
-.pixel-btn{
-    display: inline-block;
+$btn-style:(normal:rgb(33, 154, 235),
+    success:rgb(63, 189, 58),
+    warn:rgb(221, 150, 57),
+    danger:rgb(223, 54, 54));
+
+.pixel-btn {
+    position: relative;
+    display: flex;
     min-width: 10em;
     min-width: 2em;
     padding: .5em 1em;
     border-radius: .2em;
     cursor: pointer;
     border: none;
+    overflow: hidden;
     outline: none;
-    transition: .3s;
-}
-.iconfont{
-    &::before{
+    transition: .5s;
+    align-items: center;
+    justify-content: center;
+
+    &>i{
         margin-right: .5em;
     }
-}
-.radius{
-    border-radius: 1.5em;
-}
-@each $type in $btn-list{
-    $now-color:map-get($map: $btn-style, $key: $type);
-    .fill-#{$type}{
-        background-color: $now-color;
-        color: white;
-        &:hover{
-            background-color: darken($now-color,10%);
+
+    &>span {
+        transition: .5s;
+    }
+
+    &-hidden {
+        position: absolute;
+        height: 100%;
+        padding: .3em;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+        left: -40%;
+        transition: .5s;
+
+        &>p {
+            width: 100%;
         }
     }
-    .border-#{$type}{
-        border:$now-color solid 2px;
+}
+
+.radius {
+    border-radius: 1.5em;
+}
+
+@each $type in $btn-list {
+    $now-color: map-get($map: $btn-style, $key: $type);
+
+    .pixel-btn-hidden-#{$type} {
+        background-color: $now-color;
+        position: absolute;
+        height: 100%;
+        padding: .3em;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+        transition: .5s;
+
+        &>p {
+            width: 100%;
+        }
+    }
+
+    .fill-#{$type} {
+        background-color: $now-color;
+        color: white;
+
+        &:hover {
+            background-color: darken($now-color, 10%);
+        }
+    }
+
+    .border-#{$type} {
+        border: $now-color solid 2px;
         background-color: white;
-        &:hover{
-            background-color: darken(white,10%);
+
+        &:hover {
+            background-color: darken(white, 10%);
+        }
+    }
+}
+
+.test-left {
+    &:hover {
+        &>span {
+            transform: translateX(50%);
+        }
+
+        &>div {
+            left: 0% !important;
+        }
+    }
+}
+
+.test-right {
+    &:hover {
+        &>span {
+            transform: translateX(-50%);
+        }
+
+        &>div {
+            right: 0% !important;
         }
     }
 }
