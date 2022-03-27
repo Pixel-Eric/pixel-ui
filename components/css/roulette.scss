@@ -12,6 +12,9 @@ $name:pixel-roulette;
         .#{$name}-titles{
             height:22%
         }
+        .pixel-roulette-titles-subtitle{
+            opacity: 1;
+        }
     }
 
 
@@ -54,7 +57,9 @@ $name:pixel-roulette;
             &>p:nth-child(2){
                 font-size: .4rem;
                 color: #fff;
+                transition: .5s;
                 margin: 0;
+                opacity: 0;
             }
         }
     }
