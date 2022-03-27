@@ -12,7 +12,7 @@
           indexs:tab,
           width:620,
           height:300,
-          cur:'version'
+          cur:'version',
       }">
       <template v-slot:publish>
         <pixel-table

@@ -2,9 +2,9 @@
   <div class="pixel-navbar-left-ul">
     <router-link :to="data?.href?data.href:href">
       <p
-        class="pixel-navbar-left-ul-title"
-        :style="{height:getConfig.height+'px'}"
-        :class="{'pixel-navbar-left-ul-list':isList}"
+        class="pixel-navbar-left-ul-title iconfont"
+        :style="{height:getConfig.height+'px',...fontStyle}"
+        :class="{'pixel-navbar-left-ul-list':isList,...iconConfig}"
       >{{data?.title?data.title:title}}</p>
     </router-link>
     <ul
@@ -12,7 +12,7 @@
       :style="{backgroundColor:bgColor}"
     >
       <template v-if="data?.children">
-        <pixel-navbar-li
+        <pix-navbar-li
           v-for="child in data.children"
           :data="child"
           :key="child"
@@ -35,19 +35,21 @@ import {
   provide,
 } from "vue";
 export default defineComponent({
-  name: "pixel-navbar-ul",
+  name: "pix-navbar-ul",
   props: {
     data: { type: Object },
     title: String,
-    href: String,
+    fontStyle:{type:Object,default:()=>{}},
+    href: {type:String,default:''},
     bgColor: { type: String, default: "#fff" },
+    icon:{type: String, default:''}
   },
   setup(props) {
     let config = reactive({
       isList: false,
+      iconConfig:{}
     });
     let getConfig = inject("sendConfig")();
-    console.log(props.href);
     function init() {
       if (props?.data?.children) {
         config.isList = true;
@@ -62,6 +64,7 @@ export default defineComponent({
 
     onBeforeMount(() => {
       init();
+      config.iconConfig[props.icon] = true;
     });
 
     return { getConfig, ...toRefs(config) };
