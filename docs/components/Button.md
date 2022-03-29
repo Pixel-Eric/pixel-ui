@@ -60,3 +60,5 @@
 |   type   | string |    no    | normal,warn,success,danger |  按钮显示样式  |   暂无   |
 |  radius  |  boolean   |    no    |             -              |  按钮是否圆角  |   暂无   |
 |   mode   | string |    no    |        fill,border         | 按钮的填充模式 |   暂无   |
+| iconPosition |  |  |  |  |  |
+| fontStyle |  |  |  |  |  |

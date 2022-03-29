@@ -13,6 +13,13 @@
           width:620,
           height:300,
           cur:'version',
+          tabStyle:{
+              fontWeight:'bold',
+              display:'flex',
+              flexDirection:'column',
+              color:'#666'
+          },
+          indexHeight:'4em'
       }">
       <template v-slot:publish>
         <pixel-table
@@ -102,9 +109,17 @@ export default defineComponent({
       { title: "测试了Stiker组件", time: "2022-2-10" },
       { title: "测试了Tab组件", time: "2022-2-7" },
       { title: "测试了Button组件", time: "2022-2-3" },
+      { title: "测试了Table组件", time: "2022-2-13" },
+      { title: "测试了Stiker组件", time: "2022-2-10" },
+      { title: "测试了Tab组件", time: "2022-2-7" },
+      { title: "测试了Button组件", time: "2022-2-3" },
+      { title: "测试了Table组件", time: "2022-2-13" },
+      { title: "测试了Stiker组件", time: "2022-2-10" },
+      { title: "测试了Tab组件", time: "2022-2-7" },
+      { title: "测试了Button组件", time: "2022-2-3" },
     ];
     let tab = [
-      { name: "publish", value: "公告",icon:'icon-huiyuanguanli' },
+      { name: "publish", value: "公告", icon: "icon-huiyuanguanli" },
       { name: "version", value: "版本一览" },
     ];
     return { news, tab, publish };

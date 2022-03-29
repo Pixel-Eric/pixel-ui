@@ -6,7 +6,7 @@
       height:height+'px',
       flexDirection:position == 'bottom' ? 'column-reverse' : 'column'}"
   >
-    <div v-if="!hiddenHeader" class="pixel-tab-indexs" :style="{...tabAlignConfig.container}">
+    <div v-if="!hiddenHeader" class="pixel-tab-indexs" :style="{...tabAlignConfig.container,minHeight:indexHeight}">
       <div
         class="pixel-tab-indexs-btn"
         :style="{...tabAlignConfig.tab,color:textColor}"
@@ -14,7 +14,7 @@
         :key="index"
         @click="change(index.name)"
       >
-        <div class="pixel-tab-indexs-btn-content">
+        <div class="pixel-tab-indexs-btn-content" :style="tabStyle">
           <i
             v-if="index.icon"
             class="iconfont"
@@ -22,7 +22,7 @@
           ></i>
           {{index.value}}
         </div>
-        <transition
+        <transition 
           enter-active-class="animate__animated  animate__fadeInLeft"
           leave-active-class="animate__animated animate__fadeOutLeft"
         >
@@ -68,7 +68,9 @@ export default defineComponent({
       position: "top",
       lineColor: "rgb(113, 171, 104)",
       textColor: "#000",
-      tabAlign: "uniform",
+      tabAlign: "left",
+      indexHeight:'2.4em',
+      tabStyle:{},
       hiddenHeader:false,
       ...props.options,
     });
