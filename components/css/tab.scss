@@ -53,6 +53,9 @@ $indexs-height:15%;
     &-content {
         width: 100%;
         flex: 1;
+    }
+
+    &-content-scroll {
         overflow: scroll;
         overflow-x: hidden;
 

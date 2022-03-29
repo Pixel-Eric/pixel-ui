@@ -19,6 +19,7 @@
               flexDirection:'column',
               color:'#666'
           },
+          isScroll:true,
           indexHeight:'4em'
       }">
       <template v-slot:publish>

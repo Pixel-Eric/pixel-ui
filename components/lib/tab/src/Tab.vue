@@ -34,7 +34,7 @@
         </transition>
       </div>
     </div>
-    <div class="pixel-tab-content">
+    <div class="pixel-tab-content" :class="{'pixel-tab-content-scroll':isScroll}">
       <slot :name="soltName">
       </slot>
     </div>
@@ -72,6 +72,7 @@ export default defineComponent({
       indexHeight:'2.4em',
       tabStyle:{},
       hiddenHeader:false,
+      isScroll:false,
       ...props.options,
     });
     let state = reactive({});
