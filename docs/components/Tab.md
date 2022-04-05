@@ -45,6 +45,8 @@
 |   tabAlign   |  string  |    no    |     left(默认),right,uniform      |    选项卡布局方式    |                           |
 | hiddenHeader | boolean  |    no    |         true,false(默认)          |  是否隐藏选项卡头部  |                           |
 |   position   |  string  |    no    |            top/bottom             |    选项卡索引位置    |                           |
+|   TabStyle   |  object  |    no    |                                   |      选项卡配置      |                           |
+| indexHeight  |  string  |    no    |           '1px/1em/1%'            |      选项卡高度      |                           |
 
 ### 如何添加选项内容
 
